@@ -2,26 +2,41 @@
 
 using namespace std;
 
- int search(int arr[], int x, int y)
- {
-     int i;
-     for (i = 0; i < x; i++)
-        if (arr[i] == y)
-           return i;
-     return -1;
- }
-
-int main(void)
+int main()
 {
-   int arr[] = {3, 6, 8, 15,20,36};
-    int y = 10;
-     int x = sizeof(arr) / sizeof(arr[0]);
-       int result = search(arr, x, y);
-    (result == -1)? cout <<"Element is not found in array"
-                  : cout <<"Element is found at index " <<result;
+    int arr[10], m, x, max,min;
 
+      cout <<"Enter the size of the array : ";
 
+      cin >> m;
 
+      cout <<"Enter the elements of the array : ";
+       for (x = 0; x < m; x++)
+         cin >> arr[x];
+
+    max = arr[0];
+
+      for (x = 0; x < m; x++)
+    {
+        if (max < arr[x])
+
+           max = arr[x];
+
+    }
+
+    min = arr[0];
+
+     for (x = 0; x < m; x++)
+
+     {
+         if (min > arr[x])
+
+            min = arr[x];
+     }
+
+      cout << "Largest element : " << max;
+
+      cout << "Smallest element : " << min;
 
     return 0;
 }
